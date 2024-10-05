@@ -1,0 +1,24 @@
+{% extends "mainapp/basic.html" %} {% load static %} {% block title %}
+StockPicker {% endblock %} {% block css %} {% endblock %} {% block body %}
+<div class="container">
+  <h1>Live Stock Tracker</h1>
+  <p>Select your favourite stocks</p>
+  <form action="">
+    <lable for="Stockpicker"> Select Stocks:</lable>
+    <select
+      class="form-select form-select-lg mb-3"
+      multiple
+      aria-label="Multiple select example"
+      nme-="Stockpicker"
+    >
+      <option selected>Open this select menu</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+  </form>
+</div>
+
+{% endblock %} {% block js %}
+<script></script>
+{% endblock %}
