@@ -37,7 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'mainapp',
+
+    'django-celery-results',
+    'django-celery-beat',
 ]
 
 MIDDLEWARE = [
@@ -122,3 +126,14 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#celery Settings
+
+CELERY_BROKER_URL="redis://127.0.0.1:6379"
+CELERY_ACCEPT_CONTENT=['application/json']
+CELERY_RESULT_SERIALIZER='json'
+CELERY_TASK_SERIALIZER='json'
+CELERY_TIMEZONE='Asia/Kolkata'
+CELERY_RESULT_BACKEND='django-db'
+
+CELERY_BEAT_SCHEDULER='django-celery_beat_schedulers:DatabaseScheduler'
